@@ -139,6 +139,24 @@ places.
 
 ---
 
+## Meglio insieme a Riff Repeater
+
+![Un drill in corso, letto sulla tab](docs/drill-loop.png)
+
+*Un drill armato da Riff Repeater: verde la parte che viene giudicata,
+tratteggiata la rincorsa che il motore apre prima, grigie le note che in questo
+giro non tocca suonare.*
+
+Live Tab disegna il loop e il drill che qualcun altro arma. [Riff
+Repeater](https://github.com/cracklydisc/feedBack-plugin-riffrepeater) e' chi
+li arma: sceglie il passaggio, consegna al motore una scala di velocita' e un
+obiettivo, e ricorda com'e' andata.
+
+Uno arma, l'altro mostra. Presi da soli funzionano; presi insieme sai quali
+battute contano guardando la tab, invece di tenerlo a mente.
+
+---
+
 ## The look comes from a kit
 
 The panel in the player and the whole settings screen are drawn with the
