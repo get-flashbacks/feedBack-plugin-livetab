@@ -6,12 +6,12 @@ Live Tab sits between the views that already ship with the game. Tab View draws
 real tab, but as static pages with a cursor that jumps. Jumping Tab is fully
 game-like: gems fly at a hit line and there is no tab left to read. Live Tab
 keeps the tab legible while it moves, hosts any note board above it, and shows
-the same hit/miss verdicts the board shows — so the feedback lands where you are
+the same hit/miss verdicts the board shows, so the feedback lands where you are
 already looking.
 
 ![The 3D Highway above, Live Tab below](docs/split-view.png)
 
-*The note board keeps the upper part of the player, the tab takes the lower —
+*The note board keeps the upper part of the player, the tab takes the lower,
 neither covers the other.*
 
 ![The scrolling staff in full width](docs/scrolling.png)
@@ -21,7 +21,7 @@ note names beside the frets.*
 
 **Status: alpha.** It has been used on a library of about forty converted charts. If it
 does something odd on one of yours, the settings panel has a **Copy
-diagnostics** button — paste what it gives you into the bug report and the chart
+diagnostics** button, paste what it gives you into the bug report and the chart
 can be diagnosed without anyone having to own it.
 
 What changed between versions is in the [changelog](CHANGELOG.md).
@@ -37,7 +37,7 @@ Your fee[dB]ack plugins directory is:
 | Windows | `…\Feedback\resources\slopsmith\plugins\` |
 | Linux / macOS | the `resources/slopsmith/plugins/` folder inside your install |
 
-### With git — recommended
+### With git (recommended)
 
 ```
 cd …/plugins
@@ -72,10 +72,10 @@ To uninstall, delete the `livetab` folder and restart.
 
 ## Two ways to read
 
-**Scrolling** — one continuous staff sliding under a fixed cursor, with a note
+**Scrolling**: one continuous staff sliding under a fixed cursor, with a note
 board hosted above it. Nothing to lose your place in.
 
-**Page turns** — how sheet music reads. Each staff holds a fixed number of bars,
+**Page turns**: how sheet music reads. Each staff holds a fixed number of bars,
 the cursor crosses it, and at the end the stack slides up by exactly one staff.
 Nothing moves mid-bar, so the numbers hold still while you play them, and the
 staves below already show the bars to come.
@@ -103,33 +103,33 @@ underneath and every one of them is optional.
 ## What it draws
 
 Positions are measured in beats rather than seconds, over a cleaned copy of the
-chart's beat grid. Note spacing is therefore proportional to note value — a
-quarter really is twice an eighth, in a slow song and a fast one alike — and the
+chart's beat grid. Note spacing is therefore proportional to note value, a
+quarter really is twice an eighth, in a slow song and a fast one alike, and the
 tab advances at one beat per beat, locked to the music rather than to the clock.
 
-- **Notation** — slides leave the played fret on a fading band and arrive at a
+- **Notation**: slides leave the played fret on a fading band and arrive at a
   hollow head, dashed when unpitched; hammer-ons and pull-offs are an arc
   joining the two notes they link; harmonics wear a diamond, filled for pinch;
   vibrato waves along the sustain; bend depth reads as ¼, ½ or full; palm mute
   is one `P.M.` with a dashed span; accents, taps and fret-hand mutes share a
   row above the head; a linked note is parenthesised, because it is held rather
   than struck again.
-- **Rhythm** — the staff is ruled at whole beats, and at halves and quarters of
+- **Rhythm**: the staff is ruled at whole beats, and at halves and quarters of
   a beat where there is room to tell them apart. Spacing is already
   proportional to note value, so this is simply something for the eye to count
   against; each weight is fainter than the last, so the lines are there to be
   landed on rather than read.
-- **The loop** — arm one and the stretch that repeats is shaded on the staff,
+- **The loop**: arm one and the stretch that repeats is shaded on the staff,
   with the point it turns marked, in the same green as the app's loop buttons.
-- **Around the staff** — bar numbers, section names, chord names and the tempo,
+- **Around the staff**: bar numbers, section names, chord names and the tempo,
   each in a lane of its own so a chord change on a downbeat never prints through
   a bar number. The open note of every string runs down the left margin, read
   from the song's own tuning, so a drop or a half-step-down tuning says what it
   is. Lyrics can run under the staff, syllable under the note it lands on.
-- **Hit and miss** — from the host's own note-state provider, so a fret number
+- **Hit and miss**: from the host's own note-state provider, so a fret number
   turns green or red in the tab in the same frame the gem does. This needs note
   detection running with your instrument connected.
-- **Colour** — follows the per-string palette from the app's Graphics settings,
+- **Colour**: follows the per-string palette from the app's Graphics settings,
   so one palette serves every view. Or ignore it, print in a single ink like tab
   on paper, or fill the heads like the board's gems.
 
@@ -139,28 +139,28 @@ places.
 
 ---
 
-## Meglio insieme a Riff Repeater
+## Better with Riff Repeater
 
-![Un drill in corso, letto sulla tab](docs/drill-loop.png)
+![A drill in progress, read on the staff](docs/drill-loop.png)
 
-*Un drill armato da Riff Repeater: verde la parte che viene giudicata,
-tratteggiata la rincorsa che il motore apre prima, grigie le note che in questo
-giro non tocca suonare.*
+*A drill armed by Riff Repeater: green is the window being judged, the hatch is
+the run-in the engine opens before it, and grey are the notes this pass does
+not ask you to play.*
 
-Live Tab disegna il loop e il drill che qualcun altro arma. [Riff
-Repeater](https://github.com/cracklydisc/feedBack-plugin-riffrepeater) e' chi
-li arma: sceglie il passaggio, consegna al motore una scala di velocita' e un
-obiettivo, e ricorda com'e' andata.
+Live Tab draws the loop and the drill somebody else arms. [Riff
+Repeater](https://github.com/cracklydisc/feedBack-plugin-riffrepeater) is who
+arms them: it picks the passage, hands the engine a speed ladder and a goal,
+and remembers how it went.
 
-Uno arma, l'altro mostra. Presi da soli funzionano; presi insieme sai quali
-battute contano guardando la tab, invece di tenerlo a mente.
+One arms, the other shows. Either works alone; together you can see which bars
+count by looking at the tab instead of holding it in your head.
 
 ---
 
 ## The look comes from a kit
 
 The panel in the player and the whole settings screen are drawn with the
-[fee[dB]ack plugin kit](https://github.com/cracklydisc/feedBack-plugin-kit) — a
+[fee[dB]ack plugin kit](https://github.com/cracklydisc/feedBack-plugin-kit), a
 small design system with its own tests and its own
 [DESIGN.md](https://github.com/cracklydisc/feedBack-plugin-kit/blob/main/DESIGN.md),
 where every control is chosen by the shape of the value it edits rather than
@@ -172,7 +172,7 @@ any plugin can be disabled and there is no load order to rely on.
 
 [Riff Repeater](https://github.com/cracklydisc/feedBack-plugin-riffrepeater)
 draws from the same kit, which is why the two plugins look like one object
-rather than two things that resemble each other — and why a drill armed there
+rather than two things that resemble each other, and why a drill armed there
 shows up here as a loop you can read.
 
 ---
@@ -181,7 +181,7 @@ shows up here as a loop you can read.
 
 Settings → Graphics → **Live Tab** → **Copy diagnostics**, then paste. It
 reports the plugin version, what it found in the host, and what the chart looks
-like from the inside — string count, tuning offsets, and how ragged its beat
+like from the inside, string count, tuning offsets, and how ragged its beat
 grid was before cleaning. A screenshot showing the bar you were on is worth
 adding.
 
