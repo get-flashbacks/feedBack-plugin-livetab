@@ -155,6 +155,11 @@ and remembers how it went.
 One arms, the other shows. Either works alone; together you can see which bars
 count by looking at the tab instead of holding it in your head.
 
+## Plugin dependencies
+
+- **`feedback-plugin-notedetect`** (`window.noteDetect`) — verified present as of notedetect **v1.32.0**; feature-detected, not a hard requirement. Used for scoring/hit-miss judgment against the drawn tab.
+- **Riff Repeater** (v0.36.10, above) — pairing is optional and one-directional: Live Tab reads whatever drill state Riff Repeater arms, but has no drill markers to draw without it. No version enforcement exists for either dependency — see [feedback-plugin-splitscreen#47](https://github.com/get-flashbacks/feedback-plugin-splitscreen/issues/47) for the broader gap this falls into.
+
 ---
 
 ## The look comes from a kit
